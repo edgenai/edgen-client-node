@@ -1,0 +1,29 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: release
+    runs-on: ubuntu-latest
+    environment: publish
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          yarn install
+
+      - name: Publish to NPM
+        run: |
+          bash ./bin/publish-npm
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
