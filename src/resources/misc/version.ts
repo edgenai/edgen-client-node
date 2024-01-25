@@ -5,7 +5,7 @@ import { APIResource } from 'edgen/resource';
 
 export class Version extends APIResource {
     create(): APIPromise<EdgenVersion> {
-        return this._client.get('/version') as APIPromise<EdgenVersion>;
+        return this._client.get('/misc/version') as APIPromise<EdgenVersion>;
     }
 }
 
