@@ -2,7 +2,7 @@
   "name": "edgen",
   "version": "0.1.0",
   "description": "The official TypeScript library for the Edgen API",
-  "author": "Edgen <support@edgen.com>",
+  "author": "Edgen <support@edgen.co>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
