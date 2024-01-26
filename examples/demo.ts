@@ -8,7 +8,7 @@ async function main() {
   // Non-streaming:
   /*
   const completion = await client.chat.completions.create({
-    model: 'default',
+    model: 'gpt-4',
     messages: [{ role: 'user', content: 'Say this is a test' }],
   });
   console.log(completion.choices[0]?.message?.content);
@@ -16,7 +16,7 @@ async function main() {
 
   // Streaming:
   const stream = await client.chat.completions.create({
-    model: 'default',
+    model: 'gpt-4',
     messages: [{ role: 'user', content: 'Say this is a test' }],
     stream: true,
   });
