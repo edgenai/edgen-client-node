@@ -1,4 +1,3 @@
-
 import Edgen from 'edgen';
 import { APIUserAbortError } from 'edgen';
 import { Headers } from 'edgen/core';
@@ -150,13 +149,13 @@ describe('instantiate client', () => {
     test('empty env variable', () => {
       process.env['EDGEN_BASE_URL'] = ''; // empty
       const client = new Edgen({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('http://127.0.0.1:3000/v1');
+      expect(client.baseURL).toEqual('http://127.0.0.1:33322/v1');
     });
 
     test('blank env variable', () => {
       process.env['EDGEN_BASE_URL'] = '  '; // blank
       const client = new Edgen({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('http://127.0.0.1:3000/v1');
+      expect(client.baseURL).toEqual('http://127.0.0.1:33322/v1');
     });
   });
 
