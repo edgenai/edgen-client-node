@@ -28,7 +28,7 @@ const edgen = new Edgen({
 async function main() {
   const chatCompletion = await edgen.chat.completions.create({
     messages: [{ role: 'user', content: 'Say this is a test' }],
-    model: 'gpt-3.5-turbo',
+    model: 'default',
   });
 }
 
@@ -46,7 +46,7 @@ const edgen = new Edgen();
 
 async function main() {
   const stream = await edgen.chat.completions.create({
-    model: 'gpt-4',
+    model: 'default',
     messages: [{ role: 'user', content: 'Say this is a test' }],
     stream: true,
   });
@@ -74,7 +74,7 @@ const edgen = new Edgen();
 async function main() {
   const params: Edgen.Chat.ChatCompletionCreateParams = {
     messages: [{ role: 'user', content: 'Say this is a test' }],
-    model: 'gpt-3.5-turbo',
+    model: 'default',
   };
   const chatCompletion: Edgen.Chat.ChatCompletion = await edgen.chat.completions.create(params);
 }
@@ -96,7 +96,7 @@ async function main() {
   const job = await edgen.chat.completions
     .create({
         messages: [{ role: 'user', content: 'Say this is a test' }],
-        model: 'gpt-3.5-turbo',
+        model: 'default',
      })
     .catch((err) => {
       if (err instanceof Edgen.APIError) {
@@ -141,7 +141,7 @@ const edgen = new Edgen({
 });
 
 // Or, configure per-request:
-await edgen.chat.completions.create({ messages: [{ role: 'user', content: 'How can I get the name of the current day in Node.js?' }], model: 'gpt-3.5-turbo' }, {
+await edgen.chat.completions.create({ messages: [{ role: 'user', content: 'How can I get the name of the current day in Node.js?' }], model: 'default' }, {
   maxRetries: 5,
 });
 ```
@@ -158,7 +158,7 @@ const edgen = new Edgen({
 });
 
 // Override per-request:
-await edgen.chat.completions.create({ messages: [{ role: 'user', content: 'How can I list all files in a directory using Python?' }], model: 'gpt-3.5-turbo' }, {
+await edgen.chat.completions.create({ messages: [{ role: 'user', content: 'How can I list all files in a directory using Python?' }], model: 'default' }, {
   timeout: 5 * 1000,
 });
 ```
