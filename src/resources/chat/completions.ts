@@ -7,8 +7,12 @@ import * as ChatCompletionsAPI from 'edgen/resources/chat/completions';
 import * as CompletionsAPI from 'edgen/resources/completions';
 import * as Shared from 'edgen/resources/shared';
 import { Stream } from 'edgen/streaming';
+import * as EdgenStatusAPI from 'edgen/resources/status';
+import * as StatusAPI from 'edgen/resources/chat/status';
 
 export class Completions extends APIResource {
+  status: StatusAPI.Status = new StatusAPI.Status(this._client);
+
   /**
    * Creates a model response for the given chat conversation.
    */

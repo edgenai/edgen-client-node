@@ -4,8 +4,12 @@ import * as Core from 'edgen/core';
 import { APIResource } from 'edgen/resource';
 import * as TranscriptionsAPI from 'edgen/resources/audio/transcriptions';
 import { type Uploadable, multipartFormRequestOptions } from 'edgen/core';
+import * as EdgenStatusAPI from 'edgen/resources/status';
+import * as StatusAPI from 'edgen/resources/audio/status';
 
 export class Transcriptions extends APIResource {
+  status: StatusAPI.Status = new StatusAPI.Status(this._client);
+
   /**
    * Transcribes audio into the input language.
    */
