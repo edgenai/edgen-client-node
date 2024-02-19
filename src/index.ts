@@ -141,6 +141,7 @@ export class Edgen extends Core.APIClient {
   completions: API.Completions = new API.Completions(this);
   chat: API.Chat = new API.Chat(this);
   audio: API.Audio = new API.Audio(this);
+  models: API.Models = new API.Models(this);
   misc: API.Misc = new API.Misc(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {

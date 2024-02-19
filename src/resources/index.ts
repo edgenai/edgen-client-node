@@ -14,3 +14,4 @@ export {
   CompletionCreateParamsStreaming,
   Completions,
 } from './completions';
+export { Model, ModelDeleted, ModelsPage, Models } from './models';
