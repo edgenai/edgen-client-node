@@ -14,7 +14,7 @@ main();
 async function demo() {
   const transcription = await client.audio.transcriptions.create({
     file: fs.createReadStream("examples/audio/frost.wav"),
-    model: 'whisper-1',
+    model: 'default',
   });
   console.log(transcription);
 }

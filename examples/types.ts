@@ -7,7 +7,7 @@ const edgen = new Edgen();
 async function main() {
   // Explicit streaming params type:
   const streaming_params: Edgen.Chat.CompletionCreateParams = {
-    model: 'gpt-4',
+    model: 'default',
     messages: [{ role: 'user', content: 'Say this is a test!' }],
     stream: true,
   };
