@@ -7,14 +7,14 @@ const client = new Edgen();
 async function main() {
   // Non-streaming:
   const completion = await client.chat.completions.create({
-    model: 'gpt-4',
+    model: 'default',
     messages: [{ role: 'user', content: 'What is the result of 1 + 2?' }],
   });
   console.log(completion.choices[0]?.message?.content);
 
   // Streaming:
   const stream = await client.chat.completions.create({
-    model: 'gpt-4',
+    model: 'default',
     messages: [{ role: 'user', content: 'Say this is a test' }],
     stream: true,
   });

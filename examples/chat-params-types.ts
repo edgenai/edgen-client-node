@@ -9,7 +9,7 @@ async function main() {
   // ---------------- Explicit non-streaming params ------------
 
   const params: Edgen.Chat.ChatCompletionCreateParams = {
-    model: 'gpt-4',
+    model: 'default',
     messages: [{ role: 'user', content: 'Say this is a test!' }],
   };
   const completion = await edgen.chat.completions.create(params);
@@ -18,7 +18,7 @@ async function main() {
   // ---------------- Explicit streaming params ----------------
 
   const streamingParams: Edgen.Chat.ChatCompletionCreateParams = {
-    model: 'gpt-4',
+    model: 'default',
     messages: [{ role: 'user', content: 'Say this is a test!' }],
     stream: true,
   };
@@ -32,12 +32,12 @@ async function main() {
   // ---------------- Explicit (non)streaming types ----------------
 
   const params1: Edgen.Chat.ChatCompletionCreateParamsNonStreaming = {
-    model: 'gpt-4',
+    model: 'default',
     messages: [{ role: 'user', content: 'Say this is a test!' }],
   };
 
   const params2: Edgen.Chat.ChatCompletionCreateParamsStreaming = {
-    model: 'gpt-4',
+    model: 'default',
     messages: [{ role: 'user', content: 'Say this is a test!' }],
     stream: true,
   };
@@ -50,7 +50,7 @@ async function main() {
   // If you didn't include it then you'd also get an error saying that
   // `role: string` is not assignable.
   const streamingParams2 = {
-    model: 'gpt-4',
+    model: 'default',
     messages: [{ role: 'user' as const, content: 'Say this is a test!' }],
     stream: true as const,
   };
@@ -64,7 +64,7 @@ async function main() {
 
   // Without the `as const` for `stream`.
   const streamingParams3 = {
-    model: 'gpt-4',
+    model: 'default',
     messages: [{ role: 'user' as const, content: 'Say this is a test!' }],
     stream: true,
   };
@@ -102,7 +102,7 @@ export async function createCompletionParams(
   stream: boolean,
 ): Promise<Edgen.Chat.ChatCompletionCreateParams> {
   const params = {
-    model: 'gpt-3.5-turbo',
+    model: 'default',
     messages: [{ role: 'user' as const, content: 'Hello!' }],
     stream: stream,
   };
